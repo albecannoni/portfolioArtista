@@ -15,6 +15,43 @@ body {
 
 }
 
+/**colori*/
+:root {
+    --primario: #FF5733;
+    --secondario: #3498DB;
+    --terziario: #27AE60;
+    --testo: #333333;
+
+    /*sito einaudi (botstrap )*/
+    --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+
+
 /* Reset dei margini e dei padding */
 *,
 *::before,
@@ -158,16 +195,68 @@ header {
 .navbar {
     list-style: none;
     text-align: center;
+    background-color: blueviolet;
+    height: 8vh;
 }
 
-.navbar li {
-    display: inline-block;
-    margin-right: 20px;
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(41, 32, 32, 0.647);
+    border-radius: 0%;
+    /* Parte quadrata all'inizio */
+    transition: border-radius 1s;
+    /* Transizione */
+    transition: transform 1s;
+    /* Transizione */
+
+
 }
 
-.navbar a {
-    text-decoration: none;
-    color: black;
+.hamburger:hover {
+    border-radius: 50%;
+    transform: scale(0.4);
+    /* Riduzione delle dimensioni al 50% */
+    /* Parte rotonda al passaggio del mouse */
+}
+
+/*!modale/
+/* Resto dello stile rimane invariato */
+
+/* Stile per la finestra modale */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero traslucido */
+    z-index: 9999; /* Assicura che la modale sia sopra a tutto il resto */
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease-in-out;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* Stile per le sezioni */
@@ -175,6 +264,11 @@ section {
     border: 3px solid red;
     padding: 20px;
     margin: 20px 0;
+}
+
+.portfolio {
+    background-color: var(--primario);
+    height: 100%;
 }
 
 /* Stile per l'immagine di sfondo e i testi centrati */
@@ -221,7 +315,8 @@ section {
 
 /* Stile per il contenuto principale */
 .main-content {
-    flex: 1; /* Permette al contenuto di espandersi occupando lo spazio rimanente */
+    flex: 1;
+    /* Permette al contenuto di espandersi occupando lo spazio rimanente */
     padding: 20px;
     min-height: 100vh;
 }
