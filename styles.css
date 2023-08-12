@@ -5,6 +5,14 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    /* Impedisce che il footer venga sovrapposto al contenuto */
+    display: flex;
+    flex-direction: column;
+
 }
 
 /* Reset dei margini e dei padding */
@@ -171,11 +179,13 @@ section {
 
 /* Stile per l'immagine di sfondo e i testi centrati */
 .background-image {
-    background-image: url('background.jpg'); /* Sostituisci con il percorso corretto dell'immagine */
+    background-image: url('https://img.freepik.com/premium-photo/metal-steel-plate-texture-background_293060-5312.jpg?w=2000');
+    /* Sostituisci con il percorso corretto dell'immagine */
     background-size: cover;
     text-align: center;
     padding: 100px 0;
     color: white;
+    color: black;
 }
 
 /* Stile per il menu a tendina */
@@ -209,10 +219,18 @@ section {
     display: block;
 }
 
-/* Stile per il footer */
+/* Stile per il contenuto principale */
+.main-content {
+    flex: 1; /* Permette al contenuto di espandersi occupando lo spazio rimanente */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Stile per il footer sticky */
 footer {
+    background-color: #f0f0f0;
+    padding: 10px;
     text-align: center;
-    background-color: white;
-    border-top: 3px solid red;
-    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
 }
