@@ -30,6 +30,7 @@ xhr.onreadystatechange = function () {
                 <p>${produzione.tipo}</p>
                 <p>${produzione.descrizione}</p>
             `;
+            productionList.classList.add('bg-secondario');
             productionList.appendChild(listItem);
 
             // Aggiungi gestore di eventi al click sulla <li>

@@ -139,10 +139,10 @@ textarea {
 
 /**colori*/
 :root {
-    --primario: #FF5733;
-    --secondario: #3498DB;
-    --terziario: #27AE60;
-    --testo: #333333;
+    --primario: #007bff;
+    --secondario: #6c757d;
+    --terziario: #6610f2;
+    --testo: #fff;
 
     /*sito einaudi (botstrap )*/
     --blue: #007bff;
@@ -282,10 +282,18 @@ section {
     background-color: var(--primario);
     height: 100vh;
 }
+.portfolio ul{
+    list-style: none;
+}
+
+.portfolio li:nth-child(even) {
+    background-color: var(--testo);
+    color: black
+  }
 
 /* Stile per l'immagine di sfondo e i testi centrati */
 .background-image {
-    background-image: url('https://img.freepik.com/premium-photo/metal-steel-plate-texture-background_293060-5312.jpg?w=2000');
+    background-color: var(--secondario);
     /* Sostituisci con il percorso corretto dell'immagine */
     background-size: cover;
     text-align: center;
