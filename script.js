@@ -1,3 +1,47 @@
+// Funzione per generare le dropdown list
+function generateDropdowns(data) {
+    const productionSection = document.getElementById('Prod');
+    const buttons = [];
+
+    data.forEach(produzione => {
+        const button = document.createElement('button');
+        button.classList.add('dropdown-button');
+        button.textContent = produzione.titolo;
+        button.dataset.titolo = produzione.titolo; // Aggiunto il dataset per il titolo
+        button.dataset.tipo = produzione.tipo;
+        button.dataset.descrizione = produzione.descrizione;
+        button.dataset.immagine = produzione.immagine;
+        buttons.push(button);
+
+        button.addEventListener('click', () => {
+            buttons.forEach(otherButton => {
+                if (otherButton !== button) {
+                    otherButton.classList.remove('expanded');
+                    otherButton.innerHTML = otherButton.dataset.titolo;
+                }
+            });
+
+            if (button.classList.contains('expanded')) {
+                button.classList.remove('expanded');
+                productionSection.style.height = 'auto';
+                button.innerHTML = button.dataset.titolo;
+            } else {
+                const content = `
+                    <h2>${produzione.titolo}</h2>
+                    <p>${produzione.tipo}</p>
+                    <p>${produzione.descrizione}</p>
+                    <img src=${produzione.immagine}> 
+                `;
+                button.innerHTML = content;
+                button.classList.add('expanded');
+                productionSection.style.height = '100vh';
+            }
+        });
+
+        productionSection.appendChild(button);
+    });
+}
+
 // Chiamata AJAX per ottenere i dati
 let urlAPI = 'db/db.json';
 let xhr = new XMLHttpRequest();
@@ -7,40 +51,7 @@ xhr.send();
 xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
         let produzioni = JSON.parse(xhr.responseText);
-
-        // Inizializza un array per i dati ottenuti
-        let produzioniArray = [];
-
-        // Pusha i dati ottenuti nell'array
-        produzioni.forEach(element => {
-            produzioniArray.push({
-                titolo: element.titolo,
-                tipo: element.tipo,
-                descrizione: element.descrizione
-            });
-        });
-
-        // Stampa i dati nell'HTML come lista
-        let productionList = document.querySelector('.production-list');
-
-        produzioniArray.forEach(produzione => {
-            let listItem = document.createElement('li');
-            listItem.innerHTML = `
-                <h2>${produzione.titolo}</h2>
-                <p>${produzione.tipo}</p>
-                <p>${produzione.descrizione}</p>
-            `;
-            productionList.classList.add('bg-secondario');
-            productionList.appendChild(listItem);
-
-            // Aggiungi gestore di eventi al click sulla <li>
-            listItem.addEventListener('click', () => {
-                alert(`Hai cliccato su:\nTitolo: ${produzione.titolo}\nTipo: ${produzione.tipo}\nDescrizione: ${produzione.descrizione}`);
-            });
-        });
-
-        // Funzione di inizializzazione
-        init();
+        generateDropdowns(produzioni);
     }
 };
 

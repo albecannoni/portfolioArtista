@@ -282,9 +282,7 @@ section {
     background-color: var(--primario);
     height: 100vh;
 }
-.portfolio ul{
-    list-style: none;
-}
+
 
 .portfolio li:nth-child(even) {
     background-color: var(--testo);
@@ -302,36 +300,49 @@ section {
     color: black;
 }
 
+
+
 /* Stile per il menu a tendina */
+
+/* Stile per le dropdown list */
 .dropdown {
-    position: relative;
-    display: inline-block;
-    margin-top: 20px;
+    margin: 10px 0;
+    position: relative; /* Aggiunto per controllare il posizionamento */
 }
 
-.dropbtn {
+.dropdown-button {
     background-color: white;
     color: black;
     border: 1px solid black;
     padding: 10px 20px;
     cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: height 6s ease-in-out;
+    overflow: hidden;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 160px;
     border: 1px solid black;
     z-index: 1;
+    min-width: 160px;
+    top: 100%; /* Posiziona sotto il pulsante */
+    left: 0; /* Allinea a sinistra */
+    transform: translateY(-1px); /* Aggiunto per separare leggermente */
+    transition: max-height 0.3s ease-in-out; /* Aggiunto per animare l'altezza */
+    max-height: 0; /* Nascondi inizialmente */
+    overflow: hidden; /* Nascondi il contenuto in eccesso */
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+/* Stile per le dropdown espandibili */
+.dropdown-content.expanded {
     display: block;
+    max-height: 500px; /* Altezza massima per mostrare il contenuto */
 }
+
 
 /* Stile per il contenuto principale */
 .main-content {
@@ -340,9 +351,7 @@ section {
     padding: 0px;
     min-height: 100vh;
 }
-table{
-    background-color: #007bff;
-}
+
 /* Stile per il footer sticky */
 footer {
     background-color: #f0f0f0;
@@ -351,3 +360,4 @@ footer {
     position: sticky;
     bottom: 0;
 }
+
