@@ -7,6 +7,7 @@ function generateDropdowns(data) {
     data.forEach(produzione => {
         const button = document.createElement('button');
         button.classList.add('dropdown-button');
+        button.classList.add('anteprimaProd');
         button.textContent = produzione.titolo;
         button.dataset.titolo = produzione.titolo; // Aggiunto il dataset per il titolo
         button.dataset.tipo = produzione.tipo;
@@ -18,14 +19,14 @@ function generateDropdowns(data) {
             buttons.forEach(otherButton => {
                 if (otherButton !== button) {
                     otherButton.classList.remove('expanded');
-                    otherButton.innerHTML = `<p class="anteprimaProd">${otherButton.dataset.titolo}</p>`;
+                    otherButton.innerHTML = `<p>${otherButton.dataset.titolo}</p>`;
                 }
             });
 
             if (button.classList.contains('expanded')) {
                 button.classList.remove('expanded');
                 productionSection.style.height = 'auto';
-                button.innerHTML = `<p class="anteprimaProd">${button.dataset.titolo}</p>`;
+                button.innerHTML = `<p>${button.dataset.titolo}</p>`;
             } else {
                 const content = `
                     <h2>${produzione.titolo}</h2>
