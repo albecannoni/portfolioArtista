@@ -1,0 +1,138 @@
+/* Miglioramento della resa tipografica in Chrome e Safari su macOS */
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    font-family: 'Anonymous Pro', monospace;
+    min-height: 100vh;
+    /* Impedisce che il footer venga sovrapposto al contenuto */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reset dei margini e dei padding */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Impostazione di margini e padding consistenti */
+html, body, div, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Impedire il ritiro delle caselle nelle intestazioni */
+h1, h2, h3, h4, h5, h6 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* Impedire il sottolineamento dei link nascosti */
+a {
+    text-decoration-skip-ink: auto;
+}
+
+/* Rimuovere la sottolineatura dei link */
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+/* Impostare il cursore di default per gli elementi cliccabili */
+a, button {
+    cursor: pointer;
+}
+
+/* Renderizzazione coerente delle immagini come blocchi */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Normalizzare la dimensione dei pulsanti in tutti i browser */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+/* Rimuovere lo stile del pulsante per gli input tipo "button", "submit" e "reset" */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+/* Rimuovere gli stili di sfondo e bordo nei browser Webkit */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Normalizzare i dettagli per tutti i browser */
+summary {
+    display: list-item;
+    cursor: pointer;
+}
+
+/* Rimuovere lo stile dei controlli audio e video in tutti i browser */
+audio,
+video {
+    display: inline-block;
+}
+
+/* Impedire il ridimensionamento del testo nei browser Webkit */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-clear-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Impedire l'animazione dei cursori nell'area di input nei browser Webkit */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-clear-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Rimuovere lo stile dei controlli di input datetime in tutti i browser */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* Normalizzare l'overflow per elementi con testo lungo in IE e Edge */
+textarea {
+    overflow: auto;
+}
+
+/* Impedire il ridimensionamento orizzontale su piccole schermate */
+@viewport {
+    width: device-width;
+}
+
+/* Reset dei margini e dei padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

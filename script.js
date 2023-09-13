@@ -1,3 +1,4 @@
+
 // Funzione per generare le dropdown list
 function generateDropdowns(data) {
     const productionSection = document.getElementById('Prod');
@@ -17,14 +18,14 @@ function generateDropdowns(data) {
             buttons.forEach(otherButton => {
                 if (otherButton !== button) {
                     otherButton.classList.remove('expanded');
-                    otherButton.innerHTML = otherButton.dataset.titolo;
+                    otherButton.innerHTML = `<p class="anteprimaProd">${otherButton.dataset.titolo}</p>`;
                 }
             });
 
             if (button.classList.contains('expanded')) {
                 button.classList.remove('expanded');
                 productionSection.style.height = 'auto';
-                button.innerHTML = button.dataset.titolo;
+                button.innerHTML = `<p class="anteprimaProd">${button.dataset.titolo}</p>`;
             } else {
                 const content = `
                     <h2>${produzione.titolo}</h2>
@@ -41,6 +42,7 @@ function generateDropdowns(data) {
         productionSection.appendChild(button);
     });
 }
+
 
 // Chiamata AJAX per ottenere i dati
 let urlAPI = 'db/db.json';
@@ -79,6 +81,7 @@ function init() {
 
     // Aggiungiamo un gestore di eventi per chiudere la finestra modale
     closeModalButton.addEventListener('click', closeModal);
+    
 }
 
 // Aggiungiamo un gestore di eventi per il caricamento della pagina
