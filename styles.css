@@ -29,6 +29,7 @@ a {
 :root {
     --primario: #18171c;
     --secondario: #c0c0c0d9;
+    --sfumato: linear-gradient(to bottom, #c0c0c0 90%, #919193 93%, #656568 100%, #3d3c40 100%, var(--terziarioScuro) 100%);
     --terziario: #6a4156;
     --terziarioScuro: #553445;
     --testo: #fff;
@@ -108,6 +109,7 @@ header {
     background-image: url('images/logo.png');
     background-size: cover;
     background-repeat: no-repeat;
+    opacity: 85%;
 
 }
 
@@ -127,7 +129,7 @@ header {
     position: fixed;
     top: 0;
     right: 0;
-    width: 70%;
+    width: 60%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     /* box-shadow: 0 0 20px var(--terziarioScuro); */
@@ -148,8 +150,8 @@ header {
     border-radius: 0px;
     box-shadow: 0 0 10px var(--terziarioScuro);
     transition: left 0.3s ease-in-out;
-    width: 90%;
-    height: 96%;
+    width: 95%;
+    height: 98%;
 }
 
 .close-modal {
@@ -205,23 +207,11 @@ section {
 /* Stile per le dropdown list */
 
 
-.dropdown-button {
-    background-color: var(--secondario);
-    color: black;
-    border: 1px solid black;
-    padding: 0px 0px;
-    cursor: pointer;
-    width: 100vw;
-    min-height: 5vh;
-    text-align: left;
-    /* transition: height 6s ease-in-out; */
-    overflow: hidden;
-    transform: scale(0.2deg);
-}
 
 .dropdown-button {
-    background-color: var(--secondario);
-    color: black;
+    background: var(--sfumato);
+    opacity: 74%;
+    color: var(--primario);
     border: 1px solid black;
     padding: 0px 0px;
     cursor: pointer;
