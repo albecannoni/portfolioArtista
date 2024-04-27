@@ -1,9 +1,36 @@
+* {
+    font-family: "Ysabeau SC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    list-style: none;
+}
+
+/*tipografia*/
+h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+
+}
+
+h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+
+}
+
+a {
+    color: var(--testo);
+}
+
+
 
 /**colori*/
 :root {
-    --primario: #007bff;
-    --secondario: #6c757d;
-    --terziario: #6610f2;
+    --primario: #18171c;
+    --secondario: #c0c0c0d9;
+    --terziario: #6a4156;
+    --terziarioScuro: #553445;
     --testo: #fff;
 
     /*sito einaudi (botstrap )*/
@@ -45,7 +72,7 @@
 
 /* Stile di base per il body */
 body {
-    font-family: 'Anonymous Pro', monospace;
+    /* font-family: 'Anonymous Pro', monospace; */
     color: black;
     background-color: rgb(0, 0, 0);
     margin: 0;
@@ -72,11 +99,15 @@ header {
     right: 10px;
     width: 50px;
     height: 50px;
-    background-color: var(--teal);
+    background-color: var(--secondario);
     border-radius: 0%;
     /* Parte quadrata all'inizio */
     transition: border-radius 1s, transform 1s;
     /* Transizione */
+
+    background-image: url('images/logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
@@ -95,13 +126,14 @@ header {
     display: none;
     position: fixed;
     top: 0;
-
-
     right: 0;
     width: 70%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero traslucido */
-    z-index: 9999; /* Assicura che la modale sia sopra a tutto il resto */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* box-shadow: 0 0 20px var(--terziarioScuro); */
+    /* Sfondo nero traslucido */
+    z-index: 9999;
+    /* Assicura che la modale sia sopra a tutto il resto */
 }
 
 .modal {
@@ -109,12 +141,15 @@ header {
     top: 50%;
     left: 100%;
     transform: translate(-50%, -50%);
-    background-color: black;
+    background-color: var(--terziario);
+    opacity: 98%;
     color: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0px;
+    box-shadow: 0 0 10px var(--terziarioScuro);
     transition: left 0.3s ease-in-out;
+    width: 90%;
+    height: 96%;
 }
 
 .close-modal {
@@ -132,8 +167,22 @@ section {
     margin: 0;
 }
 
-.portfolio {
+#Introduction {
+    color: var(--testo);
+    font-size: 0.6rem;
+    margin-top: 3vh;
     background-color: transparent;
+    padding-bottom: 3ch;
+}
+
+#Introduction p {
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.portfolio {
+    background-color: var(--primario);
     height: 100vh;
     padding-top: 5vh;
 }
@@ -141,9 +190,10 @@ section {
 /* Stile per l'immagine di sfondo e i testi centrati */
 .background-image {
     /* background-color: var(--secondario); */
-    background-image: url('images/background2.png');
+    background-image: url('images/chenier.jpg');
     /* Sostituisci con il percorso corretto dell'immagine */
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     text-align: center;
     padding: 100px 0;
     color: white;
@@ -156,7 +206,21 @@ section {
 
 
 .dropdown-button {
-    background-color: var(--green);
+    background-color: var(--secondario);
+    color: black;
+    border: 1px solid black;
+    padding: 0px 0px;
+    cursor: pointer;
+    width: 100vw;
+    min-height: 5vh;
+    text-align: left;
+    /* transition: height 6s ease-in-out; */
+    overflow: hidden;
+    transform: scale(0.2deg);
+}
+
+.dropdown-button {
+    background-color: var(--secondario);
     color: black;
     border: 1px solid black;
     padding: 0px 0px;
@@ -174,6 +238,7 @@ section {
 
 .anteprimaProd {
     padding-left: 6vw;
+    font-weight: 600;
 }
 
 .dropdown-content {
@@ -183,12 +248,18 @@ section {
     border: 1px solid black;
     z-index: 1;
     min-width: 160px;
-    top: 100%; /* Posiziona sotto il pulsante */
-    left: 0; /* Allinea a sinistra */
-    transform: translateY(-1px); /* Aggiunto per separare leggermente */
-    transition: max-height 0.3s ease-in-out; /* Aggiunto per animare l'altezza */
-    max-height: 0; /* Nascondi inizialmente */
-    overflow: hidden; /* Nascondi il contenuto in eccesso */
+    top: 100%;
+    /* Posiziona sotto il pulsante */
+    left: 0;
+    /* Allinea a sinistra */
+    transform: translateY(-1px);
+    /* Aggiunto per separare leggermente */
+    transition: max-height 0.3s ease-in-out;
+    /* Aggiunto per animare l'altezza */
+    max-height: 0;
+    /* Nascondi inizialmente */
+    overflow: hidden;
+    /* Nascondi il contenuto in eccesso */
 }
 
 /* Stile per le dropdown espandibili */
@@ -208,10 +279,9 @@ section {
 
 /* Stile per il footer sticky */
 footer {
-    background-color: #f0f0f0;
+    background-color: var(--secondario);
     padding: 10px;
     text-align: center;
     position: sticky;
     bottom: 0;
 }
-
