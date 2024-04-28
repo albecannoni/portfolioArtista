@@ -29,7 +29,7 @@ a {
 :root {
     --primario: #18171c;
     --secondario: #c0c0c0d9;
-    --sfumato: linear-gradient(to bottom, #c0c0c0 90%, #919193 93%, #656568 100%, #3d3c40 100%, var(--terziarioScuro) 100%);
+    --sfumato: linear-gradient(to bottom, #553445 0%, #3d3c40 80%, #656568 20%, #3d3c40 0%, var(--terziarioScuro) 100%);
     --terziario: #6a4156;
     --terziarioScuro: #553445;
     --testo: #fff;
@@ -143,8 +143,8 @@ header {
     top: 50%;
     left: 100%;
     transform: translate(-50%, -50%);
-    background-color: var(--terziario);
-    opacity: 98%;
+    background-color: var(--sfumato);
+    opacity: 100%;
     color: white;
     padding: 20px;
     border-radius: 0px;
@@ -210,8 +210,8 @@ section {
 
 .dropdown-button {
     background: var(--sfumato);
-    opacity: 74%;
-    color: var(--primario);
+    opacity: 100%;
+    color: var(--testo);
     border: 1px solid black;
     padding: 0px 0px;
     cursor: pointer;
