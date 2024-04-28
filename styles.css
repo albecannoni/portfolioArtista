@@ -209,9 +209,9 @@ section {
 
 
 .dropdown-button {
-    background: var(--sfumato);
+    background-color: whitesmoke;
     opacity: 100%;
-    color: var(--testo);
+    color: var(--primario);
     border: 1px solid black;
     padding: 0px 0px;
     cursor: pointer;
