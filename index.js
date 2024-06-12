@@ -68,6 +68,7 @@ function closeModal() {
 
 // Funzione di inizializzazione
 function init() {
+    underContruction();
     // Otteniamo il riferimento all'elemento .hamburger e alla finestra modale
     const hamburgerButton = document.querySelector('.hamburger');
     const closeModalButton = document.querySelector('.close-modal');
@@ -83,6 +84,10 @@ function init() {
     // Aggiungiamo un gestore di eventi per chiudere la finestra modale
     closeModalButton.addEventListener('click', closeModal);
     
+}
+function underContruction(){
+    let body = document.querySelector('#body');
+    body.innerHTML="sito in costruzione"
 }
 
 // Aggiungiamo un gestore di eventi per il caricamento della pagina
